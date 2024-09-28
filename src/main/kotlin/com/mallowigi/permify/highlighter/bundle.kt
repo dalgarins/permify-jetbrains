@@ -18,13 +18,17 @@ private fun getBundlePath(): Path {
     val plugin = PluginManagerCore.getPlugin(PluginId.getId("com.mallowigi.permify"))
     val version = plugin?.version ?: "latest"
     val bundleDirectory = File("${plugin?.pluginPath}/bundles/$version")
-    if (!bundleDirectory.exists()) {
-      deleteFile(bundleDirectory.getParentFile())
-      bundleDirectory.mkdirs()
-      val resource = PermifyFileType::class.java.classLoader.getResourceAsStream("bundles/bundle.zip")
 
-      extract(ZipInputStream(resource!!), bundleDirectory)
+    if (bundleDirectory.exists()) {
+      deleteFile(bundleDirectory)
     }
+
+    deleteFile(bundleDirectory.getParentFile())
+    bundleDirectory.mkdirs()
+    val resource = PermifyFileType::class.java.classLoader.getResourceAsStream("bundles/permify.zip")
+
+    extract(ZipInputStream(resource!!), bundleDirectory)
+
     return Path.of("${bundleDirectory.path}/permify")
   } catch (ex: IOException) {
     throw UncheckedIOException(ex)

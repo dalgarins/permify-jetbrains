@@ -44,6 +44,8 @@
         <editorHighlighterProvider filetype="permify"
                                    implementationClass="com.mallowigi.permify.highlighter.PermifyEditorHighlighterProvider"/>
 
+        <colorSettingsPage implementation="com.mallowigi.permify.settings.PermifyColorSettings"/>
+
 
     </extensions>
 </idea-plugin>
