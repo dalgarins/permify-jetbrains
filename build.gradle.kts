@@ -79,7 +79,8 @@ intellijPlatform {
     changeNotes = provider {
       with(changelog) {
         renderItem(
-          (getOrNull(pluginVersion) ?: getUnreleased())
+          changelog
+            .getUnreleased()
             .withHeader(false)
             .withEmptySections(false),
           Changelog.OutputType.HTML,
@@ -106,8 +107,8 @@ changelog {
   version.set(pluginVersion)
   itemPrefix.set("-")
   keepUnreleasedSection.set(true)
-  unreleasedTerm.set("Changelog")
-  groups.set(listOf("Features", "Fixes", "Other", "Bump"))
+  unreleasedTerm.set("[Unreleased]")
+  groups.set(listOf("Features", "Fixes", "Other", "Chore"))
 }
 
 detekt {
