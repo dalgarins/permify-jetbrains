@@ -65,11 +65,24 @@
               "name": "keyword.control.relation.perm"
             },
             "2": {
-              "name": "variable.language.perm"
+              "name": "variable.language.relation.perm"
             }
           },
-          "comment": "Relation/Permission name",
-          "match": "^\\s*(relation|permission)\\s+([.a-zA-Z0-9_:]+)",
+          "comment": "Relation name",
+          "match": "^\\s*(relation)\\s+([.a-zA-Z0-9_:]+)",
+          "name": "meta.class.perm"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.permission.perm"
+            },
+            "2": {
+              "name": "variable.language.permission.perm"
+            }
+          },
+          "comment": "Permission name",
+          "match": "^\\s*(permission)\\s+([.a-zA-Z0-9_:]+)",
           "name": "meta.class.perm"
         },
         {
@@ -78,12 +91,25 @@
               "name": "keyword.other.action.perm"
             },
             "2": {
-              "name": "variable.language.perm"
+              "name": "variable.language.action.perm"
             }
           },
-          "comment": "Action/Attribute name",
-          "match": "^\\s*(action|attribute)\\s+([a-zA-Z0-9_]+)",
+          "comment": "Action name",
+          "match": "^\\s*(action)\\s+([a-zA-Z0-9_]+)",
           "name": "support.function.action.perm"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.other.attribute.perm"
+            },
+            "2": {
+              "name": "variable.language.attribute.perm"
+            }
+          },
+          "comment": "Attribute name",
+          "match": "^\\s*(attribute)\\s+([a-zA-Z0-9_]+)",
+          "name": "support.function.attribute.perm"
         },
         {
           "begin": "\\b(rule)\\s*([a-zA-Z0-9_]+)\\s*(\\()",
@@ -265,7 +291,7 @@
               "name": "punctuation.separator.method.perm"
             },
             "3": {
-              "name": "entity.name.type.attribute-name.perm"
+              "name": "entity.name.type.extension.perm"
             }
           },
           "match": "\\b([a-zA-Z0-9_]+)(\\.)([a-zA-Z0-9_]+)"
