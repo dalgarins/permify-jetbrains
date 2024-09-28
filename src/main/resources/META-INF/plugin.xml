@@ -30,9 +30,24 @@
         <defaultLiveTemplates file="templates/permify.xml"/>
 
         <fileIndentOptionsProvider
-                implementation="com.mallowigi.PermifyFileIndentOptionsProvider"
-                id="PermifyFileIndentOptionsProvider"/>
+            implementation="com.mallowigi.PermifyFileIndentOptionsProvider"
+            id="PermifyFileIndentOptionsProvider"/>
 
         <fileIconProvider implementation="com.mallowigi.permify.PermifyFileIconProvider"/>
+
+        <fileType name="permify"
+                  language="permify"
+                  fieldName="INSTANCE"
+                  implementationClass="com.mallowigi.permify.PermifyFileType"
+                  extensions="perm"/>
+
+        <editorHighlighterProvider filetype="PermifyFileType"
+                                   implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateEditorHighlighterProvider"/>
+
+        <lang.syntaxHighlighterFactory
+            language="permify"
+            implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateSyntaxHighlighterFactory"/>
+
+
     </extensions>
 </idea-plugin>
