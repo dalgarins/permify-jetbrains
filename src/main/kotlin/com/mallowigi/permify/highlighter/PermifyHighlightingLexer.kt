@@ -8,6 +8,6 @@ class PermifyHighlightingLexer : TextMateHighlightingLexer(getTextMateLanguageDe
   override fun getTokenType(): IElementType? {
     @Suppress("UsePropertyAccessSyntax")
     val tokenType = super.getTokenType() ?: return null
-    return PermifyTokenType((tokenType as TextMateElementType).scope)
+    return PermifyElementType((tokenType as TextMateElementType).scope)
   }
 }

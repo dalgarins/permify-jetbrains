@@ -41,12 +41,8 @@
                   implementationClass="com.mallowigi.permify.PermifyFileType"
                   extensions="perm"/>
 
-        <editorHighlighterProvider filetype="PermifyFileType"
-                                   implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateEditorHighlighterProvider"/>
-
-        <lang.syntaxHighlighterFactory
-            language="permify"
-            implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateSyntaxHighlighterFactory"/>
+        <editorHighlighterProvider filetype="permify"
+                                   implementationClass="com.mallowigi.permify.highlighter.PermifyEditorHighlighterProvider"/>
 
 
     </extensions>
