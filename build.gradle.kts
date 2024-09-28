@@ -1,11 +1,11 @@
 plugins {
   id("java")
   id("org.jetbrains.kotlin.jvm") version "1.9.24"
-  id("org.jetbrains.intellij") version "1.17.3"
+  id("org.jetbrains.intellij") version "2.1.0"
 }
 
 group = "com.mallowigi.permify"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
   mavenCentral()
